@@ -1,0 +1,204 @@
+body {
+  background: linear-gradient(135deg, #0a0a0a, #2c2c2c);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.chat-container {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  width: 420px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  gap: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  background: #202020;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.message.user .bubble {
+  background: #d4af37;
+  color: #000;
+}
+
+.bot-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: #fff;
+  outline: none;
+}
+
+.input-area button {
+  margin-left: 8px;
+  background: #d4af37;
+  border: none;
+  color: #000;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-area button:hover {
+  background: #f2d13d;
+}
+
+.quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.15);
+  justify-content: center;
+}
+
+.quick-buttons button {
+  background: #d4af37;
+  border: none;
+  color: #000;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.quick-buttons button:hover {
+  background: #f1d357;
+}
+/* Efecto de escritura */
+.typing .dots {
+  display: inline-block;
+  animation: blink 1.4s infinite both;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    color: transparent;
+  }
+  40% {
+    color: #d4af37;
+  }
+}
+/* Contenedor principal */
+.chat-container {
+  width: 90%;
+  max-width: 480px;
+  margin: 40px auto;
+  background: #ffffff20;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 85vh; /* Fijamos altura visible */
+}
+
+/* Caja del chat (donde aparecen los mensajes) */
+#chat-box {
+  flex: 1; /* que ocupe todo el espacio disponible */
+  overflow-y: auto; /* permite scroll */
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Área de entrada */
+.input-area {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.input-area button {
+  background: linear-gradient(135deg, #3a86ff, #8338ec);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.input-area button:hover {
+  opacity: 0.85;
+}
+
+/* Botones rápidos */
+.quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #ffffff;
+  position: sticky;
+  bottom: 0;
+  z-index: 5; /* siempre encima del chat */
+}
+
+.quick-buttons button {
+  background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+.quick-buttons button:hover {
+  transform: scale(1.05);
+}

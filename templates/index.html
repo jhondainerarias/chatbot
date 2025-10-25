@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asistente Virtual | Mis Fragancias</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="message bot">
+      <img src="{{ url_for('static', filename='jhon.jpg') }}" class="bot-avatar" alt="Bot Perfumería" />
+      <div class="bubble">¡Hola! Soy tu asistente  Jhon Arias  ¿Qué deseas saber hoy?</div>
+    </div>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+      <input 
+        type="text" 
+        id="mensaje" 
+        placeholder="Escribe tu mensaje..." 
+        autocomplete="off" 
+        onkeydown="if(event.key==='Enter') enviarMensaje()" />
+      <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <div class="quick-buttons">
+      <button onclick="enviarTexto('tamaños')">Tamaños</button>
+      <button onclick="enviarTexto('precios')">Precios</button>
+      <button onclick="enviarTexto('métodos de pago')">Métodos de Pago</button>
+      <button onclick="enviarTexto('pureza')">Pureza</button>
+      <button onclick="enviarTexto('envases')">Envases</button>
+      <button onclick="enviarTexto('marcas y referencias')">Marcas</button>
+      <button onclick="enviarTexto('ofertas')">Ofertas</button>
+      <button onclick="enviarTexto('link de la tienda')">link de la tienda</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
